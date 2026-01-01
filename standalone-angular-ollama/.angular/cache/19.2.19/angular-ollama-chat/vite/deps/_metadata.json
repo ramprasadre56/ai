@@ -1,0 +1,40 @@
+{
+  "hash": "941214a2",
+  "configHash": "337e63e0",
+  "lockfileHash": "fcd6eb7d",
+  "browserHash": "97f74307",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "5135912b",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "2a626ccf",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "c8e0ef6f",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "2df3ebd0",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PIZJUFEL": {
+      "file": "chunk-PIZJUFEL.js"
+    },
+    "chunk-BNV2BS6S": {
+      "file": "chunk-BNV2BS6S.js"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { ollama } from 'ollama-ai-provider-v2';
 import { convertToModelMessages, streamObject, streamText } from 'ai';
 import 'dotenv/config';
 import express, { Request, Response } from 'express';
@@ -7,10 +7,13 @@ import z from 'zod';
 const app = express();
 app.use(express.json({ strict: false })); // Allow primitives (for analyze endpoint)
 
+// Use Ollama with Gemma model
+const model = ollama('gemma3:4b');
+
 app.post('/api/chat', async (req: Request, res: Response) => {
-  const { messages, selectedModel } = req.body;
+  const { messages } = req.body;
   const result = streamText({
-    model: openai(selectedModel),
+    model,
     messages: await convertToModelMessages(messages),
   });
 
@@ -21,7 +24,7 @@ app.post('/api/completion', async (req: Request, res: Response) => {
   const { prompt } = req.body;
 
   const result = streamText({
-    model: openai('gpt-4o'),
+    model,
     prompt,
   });
 
@@ -32,7 +35,7 @@ app.post('/api/analyze', express.raw(), async (req: Request, res: Response) => {
   const input = req.body.toString('utf8');
 
   const result = streamObject({
-    model: openai('gpt-4o'),
+    model,
     schema: z.object({
       title: z.string(),
       summary: z.string(),

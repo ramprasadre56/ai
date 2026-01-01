@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently 'ng serve --proxy-config proxy.conf.json' 'tsx src/server.ts'",
+    "start": "concurrently \"npx ng serve --proxy-config proxy.conf.json\" \"npx tsx src/server.ts\"",
     "build:app": "ng build --conditions browser",
     "build:server": "tsc -p tsconfig.server.json",
     "build": "pnpm run build:app && pnpm run build:server",
@@ -24,6 +24,7 @@
     "ai": "6.0.5",
     "dotenv": "16.4.5",
     "express": "5.0.1",
+    "ollama-ai-provider-v2": "^2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zod": "3.25.76",

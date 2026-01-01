@@ -1,0 +1,40 @@
+{
+    "name": "angular-ollama-chat",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "ng": "ng",
+        "start": "concurrently \"npx ng serve --proxy-config proxy.conf.json\" \"npx tsx src/server.ts\"",
+        "build": "ng build"
+    },
+    "dependencies": {
+        "@ai-sdk/angular": "^2.0.5",
+        "@ai-sdk/gateway": "^3.0.4",
+        "@angular/common": "^19.0.0",
+        "@angular/compiler": "^19.0.0",
+        "@angular/core": "^19.0.0",
+        "@angular/forms": "^19.0.0",
+        "@angular/platform-browser": "^19.0.0",
+        "@angular/platform-browser-dynamic": "^19.0.0",
+        "@angular/router": "^19.0.0",
+        "ai": "^6.0.5",
+        "ai-sdk-ollama": "^3.0.0",
+        "dotenv": "^16.4.5",
+        "express": "^5.0.0",
+        "rxjs": "~7.8.0",
+        "tslib": "^2.3.0",
+        "zod": "^4.0.0",
+        "zone.js": "~0.15.0"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "^19.0.0",
+        "@angular/cli": "^19.0.0",
+        "@angular/compiler-cli": "^19.0.0",
+        "@types/express": "^5.0.0",
+        "@types/node": "^20.0.0",
+        "@vercel/node": "^5.5.16",
+        "concurrently": "^9.1.0",
+        "tsx": "^4.19.0",
+        "typescript": "~5.6.0"
+    }
+}
