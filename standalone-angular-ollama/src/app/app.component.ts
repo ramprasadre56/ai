@@ -8,8 +8,8 @@ import { ChatComponent } from './chat.component';
   template: `
     <div class="container">
       <header>
-        <h1>🤖 Angular + AI Gateway Chat</h1>
-        <p>Powered by Vercel AI Gateway</p>
+        <h1>🤖 Angular + Ollama Chat</h1>
+        <p>Powered by Gemma 3 1B (Local)</p>
       </header>
       <app-chat></app-chat>
     </div>

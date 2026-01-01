@@ -1,14 +1,13 @@
-import { createGateway, streamText } from 'ai';
+import { ollama } from 'ai-sdk-ollama';
+import { streamText } from 'ai';
 import 'dotenv/config';
 import express, { Request, Response } from 'express';
 
 const app = express();
 app.use(express.json());
 
-// Use Vercel AI Gateway
-const gateway = createGateway({
-    apiKey: process.env.AI_GATEWAY_API_KEY ?? '',
-});
+// Use Ollama with Gemma model (local)
+const model = ollama('gemma3:1b');
 
 app.post('/api/chat', async (req: Request, res: Response) => {
     try {
@@ -25,7 +24,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
         console.log('Received messages:', JSON.stringify(formattedMessages, null, 2));
 
         const result = streamText({
-            model: gateway('openai/gpt-4o-mini'),
+            model,
             messages: formattedMessages,
         });
 
@@ -37,5 +36,5 @@ app.post('/api/chat', async (req: Request, res: Response) => {
 });
 
 app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+    console.log('Server listening on port 3000 (Ollama + Gemma)');
 });
